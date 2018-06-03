@@ -35,7 +35,7 @@ https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&styl
 
 This URL may look complex at first glance, but all it really does is combine many small pieces of information that describe how the image should look. Let's examine what all goes into the URL by using the following table.
 | Component | Description |
-|--|--|
+| --- | --- |
 | `https://preview.bitmoji.com/avatar-builder-v3/preview/` | This is the base URL. All image URLs will begin with this. |
 | `head` | This describes what pose the image should use. In the example, the image appears to only show the head. |
 | `?scale=` | This describes how large the image should be rendered. Images are rendered as PNGs, and the larger the scale, the higher the resolution of the image. |
