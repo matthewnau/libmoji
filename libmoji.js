@@ -46,26 +46,26 @@ const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 // returns the image url of a bitmoji avatar with the specified parameters
 function buildUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
-	// use string templating to build the url
-	let url = `${baseUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}` 
-	url += `&rotation=${rotation}${mapTraits(traits).join("")}&outfit=${outfit}`
-	return url;
+  // use string templating to build the url
+  let url = `${baseUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}` 
+  url += `&rotation=${rotation}${mapTraits(traits).join("")}&outfit=${outfit}`
+  return url;
 }
 
 // export all functions to be used
 module.exports = {
-	genders: genders,
-	poses: poses,
-    getTraits: getTraits,
-    getBrands: getBrands,
-    getOutfits: getOutfits,
-    getValues: getValues,
-    getKey: getKey,
-    randInt: randInt,
-    randBrand: randBrand,
-    randOutfit: randOutfit,
-    randValue: randValue,
-    randTraits: randTraits,
-    mapTraits: mapTraits,
-    buildUrl: buildUrl
+  genders: genders,
+  poses: poses,
+  getTraits: getTraits,
+  getBrands: getBrands,
+  getOutfits: getOutfits,
+  getValues: getValues,
+  getKey: getKey,
+  randInt: randInt,
+  randBrand: randBrand,
+  randOutfit: randOutfit,
+  randValue: randValue,
+  randTraits: randTraits,
+  mapTraits: mapTraits,
+  buildUrl: buildUrl
 };
