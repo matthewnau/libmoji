@@ -1,3 +1,4 @@
+
 # Libmoji
 This is a tiny library for making fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets).
 
@@ -25,3 +26,19 @@ You should now have access to all functions and variables from the library. Libm
 ---
 
 ## Understanding Libmoji
+
+In order to build a Bitmoji, it's important to understand what components comprise the URL. For this example, we will examine the URL for the first image above. The following URL is what generated [this](https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&style=5&rotation=0&beard=2212&brow=1555&cheek_details=1356&ear=1423&eye=1614&eyelash=-1&eye_details=1352&face_lines=1366&glasses=2465&hair=1723&hat=2495&jaw=1400&mouth=2338&nose=1482&beard_tone=8678208&blush_tone=16754088&brow_tone=6772090&eyeshadow_tone=-1&hair_tone=8637550&hair_treatment_tone=10513945&lipstick_tone=16740668&pupil_tone=5793385&skin_tone=9657655&body=1&face_proportion=13&eye_spacing=0&eye_size=2&outfit=990491) image.
+
+```
+https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&style=5&rotation=0&beard=2212&brow=1555&cheek_details=1356&ear=1423&eye=1614&eyelash=-1&eye_details=1352&face_lines=1366&glasses=2465&hair=1723&hat=2495&jaw=1400&mouth=2338&nose=1482&beard_tone=8678208&blush_tone=16754088&brow_tone=6772090&eyeshadow_tone=-1&hair_tone=8637550&hair_treatment_tone=10513945&lipstick_tone=16740668&pupil_tone=5793385&skin_tone=9657655&body=1&face_proportion=13&eye_spacing=0&eye_size=2&outfit=990491
+```
+
+This URL may look complex at first glance, but all it really does is combine many small pieces of information that describe how the image should look. Let's examine what all goes into the URL by using the following table.
+| Component | Description |
+|--|--|
+| `https://preview.bitmoji.com/avatar-builder-v3/preview/` | This is the base URL. All image URLs will begin with this. |
+| `head` | This describes what pose the image should use. In the example, the image appears to only show the head. |
+| `?scale=` | This describes how large the image should be rendered. Images are rendered as PNGs, and the larger the scale, the higher the resolution of the image.
+| `&gender=` | Describes which gender the avatar should be. This determines what traits to load, and which outfits are available. |
+| `&style=` | This property does not appear to change anything, so it is best to leave it as the default of `5`. |
+| `&rotation=` | Determines which way the avatar faces. It only works on `body` and `head` poses. |
