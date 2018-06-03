@@ -1,5 +1,6 @@
 
 
+
 # Libmoji
 This is a tiny library for making fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets).
 
@@ -49,3 +50,24 @@ This URL may look complex at first glance, but all it really does is combine man
 
 
 All of these parameters can be changed to create a Bitmoji of your preference. To find a complete list of all possible traits and values for a specific gender, consult the `assets.json` file, or print a list using the functions provided by Libmoji.
+
+---
+
+## Libmoji Documentation
+Here you can find a list of all methods and variables in Libmoji, and what they do. You will also find example code for using these methods.
+### Genders
+The `genders` variable is a multi-dimensional array that contains the string and index value associated with each gender.
+```JavaScript
+const genders = [['male',1],["female",2]];
+```
+### Poses
+The `poses` variable is a string array that contains all possible poses that can be passed to the `buildUrl` method.
+```JavaScript
+const poses = ["fashion","head","body"];
+```
+### BaseURL
+The `baseUrl` variable is a string representing the beginning of every Bitmoji image's URL.
+```JavaScript
+const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
+```
+
