@@ -34,6 +34,7 @@ https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&styl
 ```
 
 This URL may look complex at first glance, but all it really does is combine many small pieces of information that describe how the image should look. Let's examine what all goes into the URL by using the following table.
+
 | Component | Description |
 | --- | --- |
 | `https://preview.bitmoji.com/avatar-builder-v3/preview/` | This is the base URL. All image URLs will begin with this. |
