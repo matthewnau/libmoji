@@ -28,6 +28,12 @@ You should now have access to all functions and variables from the library. Libm
 
 If you're interested in how a Bitmoji image URL is assembled, or need assistance with using Libmoji please visit the [wiki](https://github.com/matthewnau/libmoji/wiki). It contains all Libmoji related docs and articles which may be of use.
 
+<p align="center">
+<img height="400px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=7&beard=1630&brow=1541&cheek_details=1354&ear=1425&eye=1622&eyelash=2279&eye_details=-1&face_lines=1366&glasses=2441&hair=1719&hat=2555&jaw=1392&mouth=2337&nose=1460&beard_tone=8935738&blush_tone=16299718&brow_tone=13816322&eyeshadow_tone=14725305&hair_tone=4788241&hair_treatment_tone=666890&lipstick_tone=8929692&pupil_tone=11188685&skin_tone=6240025&body=1&face_proportion=4&eye_spacing=1&eye_size=0&outfit=978521"/>
+<img height="400px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/fashion?scale=3&gender=1&style=5&rotation=0&beard=1664&brow=1544&cheek_details=1353&ear=1424&eye=1613&eyelash=-1&eye_details=1352&face_lines=1358&glasses=1370&hair=1326&hat=-1&jaw=1396&mouth=2339&nose=1465&beard_tone=9201721&blush_tone=10713178&brow_tone=9201721&eyeshadow_tone=2698284&hair_tone=15255700&hair_treatment_tone=666890&lipstick_tone=8359613&pupil_tone=7448799&skin_tone=12624259&body=2&face_proportion=16&eye_spacing=0&eye_size=1&outfit=1018081" />
+<img height="400px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=2&style=5&rotation=1&brow=1577&cheek_details=1357&ear=1433&eye=1612&eyelash=2280&eye_details=1351&face_lines=1363&glasses=-1&hair=1305&hat=2544&jaw=1413&mouth=2341&nose=1490&blush_tone=14381385&brow_tone=860998&eyeshadow_tone=15563944&hair_tone=7103070&hair_treatment_tone=15105803&lipstick_tone=3787661&pupil_tone=3307665&skin_tone=12881912&body=9&breast=3&face_proportion=1&eye_spacing=1&eye_size=0&outfit=1017967" />
+</p>
+
 ---
 
 ## Product disclaimer
