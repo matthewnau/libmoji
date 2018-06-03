@@ -71,14 +71,9 @@ A string which contains the beginning of every Bitmoji image's URL.
 const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
 ```
 
-### getTraits()
-#### Description
-The **`libmoji.getTraits()`** function returns an object with a list of all possible traits for a specific gender.
-#### Paramters
-Takes a `gender` string as input. Options are `"male"` or `"female"`.
-#### Example
+### `getTraits(gender)`
+Takes a `gender` string as input and returns an object with a list of all possible traits for a specific gender. Options are `"male"` or `"female"`
 ```JavaScript
 console.log(libmoji.getTraits("male"));
 /* returns an array of trait objects */
 ```
-
