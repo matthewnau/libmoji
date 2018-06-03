@@ -38,7 +38,7 @@ This URL may look complex at first glance, but all it really does is combine man
 |--|--|
 | `https://preview.bitmoji.com/avatar-builder-v3/preview/` | This is the base URL. All image URLs will begin with this. |
 | `head` | This describes what pose the image should use. In the example, the image appears to only show the head. |
-| `?scale=` | This describes how large the image should be rendered. Images are rendered as PNGs, and the larger the scale, the higher the resolution of the image.
+| `?scale=` | This describes how large the image should be rendered. Images are rendered as PNGs, and the larger the scale, the higher the resolution of the image. |
 | `&gender=` | Describes which gender the avatar should be. This determines what traits to load, and which outfits are available. |
 | `&style=` | This property does not appear to change anything, so it is best to leave it as the default of `5`. |
 | `&rotation=` | Determines which way the avatar faces. It only works on `body` and `head` poses. |
