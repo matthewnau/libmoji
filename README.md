@@ -1,7 +1,7 @@
 # Libmoji
 This is a small library for making fun, and unique Bitmoji avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image url for an avatar with random or speicific characteristics pulled from the Bitmoji asset database.
 
-Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji does not allow for the use of comics and stickers. This library is strictly for avatar-building only.
+Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji does not incorporate the use of comics and stickers. This library can only be used for avatar-building at this time.
 
 <p align="center">
 <img height="250px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/head?scale=3&gender=1&style=5&rotation=0&beard=2274&brow=1558&cheek_details=1652&ear=1427&eye=1609&eyelash=2279&eye_details=1348&face_lines=1364&glasses=2385&hair=1694&hat=1387&jaw=1396&mouth=2337&nose=1470&beard_tone=11569973&blush_tone=16737111&brow_tone=6772090&eyeshadow_tone=14655374&hair_tone=15896242&hair_treatment_tone=15105803&lipstick_tone=14588595&pupil_tone=4611439&skin_tone=16443344&body=0&face_proportion=16&eye_spacing=2&eye_size=0&outfit=1018095"/>
