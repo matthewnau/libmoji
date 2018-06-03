@@ -53,28 +53,24 @@ All of these parameters can be changed to create a Bitmoji of your preference. T
 ## Libmoji Documentation
 Here you can find a list of all methods and variables in Libmoji, and what they do. You will also find example code for using these methods.
 
-| Name | Description |
-| --- | --- |
-| `genders` | An array that contains the string and index value associated with each gender. |
-#### Example
+### `genders`
+An array that contains the string and index value associated with each gender.
 ```JavaScript
 const genders = [['male',1],["female",2]];
 ```
 
-| Name | Description |
-| --- | --- |
-| `poses` | A string array that contains all possible poses that can be passed to the `buildUrl` method. |
-#### Example
+### `poses`
+A string array that contains all possible poses that can be passed to the `buildUrl` method.
 ```JavaScript
 const poses = ["fashion","head","body"];
 ```
 
-### baseURL
-#### Description
+### `baseUrl`
 A string which contains the beginning of every Bitmoji image's URL.
 ```JavaScript
 const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
 ```
+
 ### getTraits()
 #### Description
 The **`libmoji.getTraits()`** function returns an object with a list of all possible traits for a specific gender.
