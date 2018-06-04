@@ -38,7 +38,7 @@ const randOutfit = (outfits) => outfits[randInt(outfits.length)]["id"];
 const randValue = (values) => values[randInt(values.length)]["value"];
 
 // returns an array containing traits with random key value pairs
-const randTraits = (gender) => getTraits(gender).map(trait => [getKey(trait), randValue(getValues(trait))]);
+const randTraits = (traits) => traits.map(trait => [getKey(trait), randValue(getValues(trait))]);
 
 // map a trait object to a list of strings
 const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
