@@ -7,11 +7,14 @@ const genders = [['male',1],["female",2]];
 // holds all possible avatar poses
 const poses = ["fashion","head","body"];
 
+// holds all possible styles and their values
+const styles = [["bitstrips",1],['bitmoji',4],["cm",5]];
+
 // holds the part of the bitmoji avatar url that is the same for all combinations
 const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
 
-// returns an object with a list of all possible traits for a gender
-const getTraits = (gender) => assets["traits"][gender]['cm']["categories"];
+// returns an object with a list of all possible traits for a gender and style
+const getTraits = (gender, style) => assets["traits"][gender][style]["categories"];
 
 // returns an object with a list of all possible brands for a gender
 const getBrands = (gender) => assets["outfits"][gender]["brands"];
@@ -56,6 +59,7 @@ function buildUrl (pose, scale, gender, style, rotation, traits, outfit) {
 module.exports = {
   genders: genders,
   poses: poses,
+  styles: styles,
   getTraits: getTraits,
   getBrands: getBrands,
   getOutfits: getOutfits,
