@@ -1,14 +1,14 @@
 // holds all possible traits and outfits
-const assets = require('./assets.json');
+const assets = require("./assets.json");
 
 // holds all possible genders and their values
-const genders = [['male',1],["female",2]];
+const genders = [["male",1],["female",2]];
 
 // holds all possible avatar poses
 const poses = ["fashion","head","body"];
 
 // holds all possible styles and their values
-const styles = [["bitstrips",1],['bitmoji',4],["cm",5]];
+const styles = [["bitstrips",1],["bitmoji",4],["cm",5]];
 
 // holds the part of the bitmoji avatar url that is the same for all combinations
 const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
