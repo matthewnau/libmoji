@@ -16,13 +16,19 @@ Many different types of Bitmoji styles can be created. Libmoji allows you to mak
 
 ## Integrating Libmoji
 
-Integrating Libmoji into your project is very simple! Simply fork the project from GitHub and make sure your project includes the `assets.json` and `libmoji.js` files. Then import the library into your project file.
+Integrating Libmoji into your project is very simple! You've got two options to choose from. Either fork the project from GitHub, or use npm to install the module. If you choose the GitHub method, make sure your project includes the `assets.json` and `libmoji.js` files. Then import the library into your project file.
 
+#### GitHub Installation
 ```JavaScript
 const libmoji = require('./libmoji.js');
 /* update the path to wherever you saved Libmoji */
 ```
-You should now have access to all functions and variables from the library. Libmoji does not use too many variables or functions, but it is important to make sure that you do not use any of the same names in your project or it could cause errors. Refer to the [documentation](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) for how to use Libmoji.
+
+#### Npm Installation
+```Shell
+$ npm install libmoji
+```
+Regardless of your installation choice, you should now have access to all functions and variables from the library. Libmoji does not use too many variables or functions, but it is important to make sure that you do not use any of the same names in your project or it could cause errors. Refer to the [documentation](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) for how to use Libmoji.
 
 ---
 
