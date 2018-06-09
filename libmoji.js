@@ -1,6 +1,9 @@
 // holds all possible traits and outfits
 const assets = require("./assets.json");
 
+// holds all possible comic templates
+const templates = require("./templates.json");
+
 // holds all possible genders and their values
 const genders = [["male",1],["female",2]];
 
@@ -12,6 +15,9 @@ const styles = [["bitstrips",1],["bitmoji",4],["cm",5]];
 
 // holds the part of the bitmoji avatar url that is the same for all combinations
 const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
+
+// returns an object with a list of all comics
+const getComics = (templates) => templates['imoji'];
 
 // returns an object with a list of all possible traits for a gender and style
 const getTraits = (gender, style) => assets["traits"][gender][style]["categories"];
@@ -46,6 +52,9 @@ const randTraits = (traits) => traits.map(trait => [getKey(trait), randValue(get
 // map a trait object to a list of strings
 const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 
+// return a random comic object
+const randComic = (comics) => comics[randInt(comics.length)];
+
 // returns the image url of a bitmoji avatar with the specified parameters
 function buildUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
@@ -57,9 +66,12 @@ function buildUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
 // export all functions to be used
 module.exports = {
+  templates: templates,
   genders: genders,
   poses: poses,
   styles: styles,
+  baseUrl: baseUrl,
+  getComics: getComics,
   getTraits: getTraits,
   getBrands: getBrands,
   getOutfits: getOutfits,
@@ -71,5 +83,6 @@ module.exports = {
   randValue: randValue,
   randTraits: randTraits,
   mapTraits: mapTraits,
+  randComic: randComic,
   buildUrl: buildUrl
 };
