@@ -1,6 +1,9 @@
 // holds all possible traits and outfits
 const assets = require("./assets.json");
 
+// holds all possible comic templates
+const templates = require("./templates.json")['imoji'];
+
 // holds all possible genders and their values
 const genders = [["male",1],["female",2]];
 
@@ -10,8 +13,11 @@ const poses = ["fashion","head","body"];
 // holds all possible styles and their values
 const styles = [["bitstrips",1],["bitmoji",4],["cm",5]];
 
-// holds the part of the bitmoji avatar url that is the same for all combinations
-const baseUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
+// holds the part of the preview avatar url that is the same for all combinations
+const basePreviewUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
+
+// holds the part of the template avatar url that is the same for all comics
+const baseTemplateUrl = "https://render.bitstrips.com/v2/cpanel/";
 
 // returns an object with a list of all possible traits for a gender and style
 const getTraits = (gender, style) => assets["traits"][gender][style]["categories"];
@@ -27,6 +33,15 @@ const getValues = (trait) => trait["options"];
 
 // returns the name of a trait as a string
 const getKey = (trait) => trait["key"];
+
+//return the avatar uuid from a comic url as a string
+const getAvatarUuid = (url) => url.split('-').slice(5,10).join('-');
+
+// returns the avatar id from a comic url as a string
+const getAvatarId = (url) => url.split('-').slice(1,3).join('-');
+
+// returns the comic id as a string
+const getComicId = (template) => template["comic_id"];
 
 // returns a random integer between 0 (included) and the max (excluded)
 const randInt = (max) => Math.floor(Math.random() * Math.floor(max));
@@ -46,30 +61,46 @@ const randTraits = (traits) => traits.map(trait => [getKey(trait), randValue(get
 // map a trait object to a list of strings
 const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 
+// return a random comic object
+const randTemplate = (templates) => templates[randInt(templates.length)];
+
 // returns the image url of a bitmoji avatar with the specified parameters
-function buildUrl (pose, scale, gender, style, rotation, traits, outfit) {
+function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
   // use string templating to build the url
-  let url = `${baseUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}` 
+  let url = `${basePreviewUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}` 
   url += `&rotation=${rotation}${mapTraits(traits).join("")}&outfit=${outfit}`
   return url;
 }
 
+// returns the image url of a bitmoji comic with the specified paramters
+function buildComicUrl (comicId, avatarId, transparent, scale) {
+  return `${baseTemplateUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&palette=1&scale=${scale}`
+}
+
 // export all functions to be used
 module.exports = {
+  templates: templates,
   genders: genders,
   poses: poses,
   styles: styles,
+  basePreviewUrl: basePreviewUrl,
+  baseTemplateUrl: baseTemplateUrl,
   getTraits: getTraits,
   getBrands: getBrands,
   getOutfits: getOutfits,
   getValues: getValues,
   getKey: getKey,
+  getAvatarUuid: getAvatarUuid,
+  getAvatarId: getAvatarId,
+  getComicId: getComicId,
   randInt: randInt,
   randBrand: randBrand,
   randOutfit: randOutfit,
   randValue: randValue,
   randTraits: randTraits,
   mapTraits: mapTraits,
-  buildUrl: buildUrl
+  randTemplate: randTemplate,
+  buildPreviewUrl: buildPreviewUrl,
+  buildComicUrl:  buildComicUrl,
 };

@@ -1,7 +1,7 @@
 # Libmoji
-This is a tiny library for making fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets).
+This is a tiny library for making fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets). Comics are pulled from the [templates database](https://api.bitmoji.com/content/templates).
 
-Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji works without the use of access tokens, and therefore can only render character previews. Comic strips and stickers require the use of a registered account.
+Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji works without the use of access tokens when generating avatars, and therefore can only render character previews by default. In order to create comic strips, you will need to have a Bitmoji or Snapchat account, and have the [chrome extension](https://chrome.google.com/webstore/detail/bitmoji/bfgdeiadkckfbkeigkoncpdieiiefpig).
 
 Many different types of Bitmoji styles can be created. Libmoji allows you to make `Bitmoji Deluxe`, `Bitmoji Classic`, and `Bitstrips` avatar styles. Each style can be rendered in either gender with tons of different traits and outfits! There are an infinte amount of possibilities! See the article [Bitmoji Styles](https://github.com/matthewnau/libmoji/wiki/Bitmoji-Styles) for examples of what each style looks like.
 
@@ -30,11 +30,18 @@ $ npm install libmoji
 ```
 Regardless of your installation choice, you should now have access to all functions and variables from the library. Libmoji does not use too many variables or functions, but it is important to make sure that you do not use any of the same names in your project or it could cause errors. Refer to the [documentation](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) for how to use Libmoji.
 
+
+<p align="center">
+<img height="400px" src="https://render.bitstrips.com/v2/cpanel/eb1a2ea1-7c1f-4a92-abdb-e89cdc52edfd-be541d0a-5344-47a3-94ac-5e3912651ea5-v1.png?transparent=1&palette=1&scale=2"/>
+</p>
+
 ---
 
 ## Additional Information
 
 If you're interested in how a Bitmoji image URL is assembled, or need assistance with using Libmoji please visit the [wiki](https://github.com/matthewnau/libmoji/wiki). It contains all Libmoji related [docs](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) and articles which may be of use.
+
+Also, to use the comics portion of Libmoji, you need to first identify your unique avatar id. This can be done by following the steps in [this](https://github.com/matthewnau/libmoji/wiki/Finding-Your-ID) article. Once you have the id, you're good to go!
 
 <p align="center">
 <img height="400px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=7&beard=1630&brow=1541&cheek_details=1354&ear=1425&eye=1622&eyelash=2279&eye_details=-1&face_lines=1366&glasses=2441&hair=1719&hat=2555&jaw=1392&mouth=2337&nose=1460&beard_tone=8935738&blush_tone=16299718&brow_tone=13816322&eyeshadow_tone=14725305&hair_tone=4788241&hair_treatment_tone=666890&lipstick_tone=8929692&pupil_tone=11188685&skin_tone=6240025&body=1&face_proportion=4&eye_spacing=1&eye_size=0&outfit=978521"/>
