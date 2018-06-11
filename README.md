@@ -41,7 +41,7 @@ Regardless of your installation choice, you should now have access to all functi
 
 If you're interested in how a Bitmoji image URL is assembled, or need assistance with using Libmoji please visit the [wiki](https://github.com/matthewnau/libmoji/wiki). It contains all Libmoji related [docs](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) and articles which may be of use.
 
-Also, to use the comics portion of Libmoji, you need to first identify your unique avatar id. This can be done by following the steps in [this](https://github.com/matthewnau/libmoji/wiki/Finding-Your-ID) article. Once you have the id, you're good to go!
+Also, to use the comics portion of Libmoji, you need to first identify your unique avatar ID. This can be done by following the steps in [this](https://github.com/matthewnau/libmoji/wiki/Finding-Your-ID) article. Once you have the ID, you're good to go!
 
 <p align="center">
 <img height="400px" src="https://preview.bitmoji.com/avatar-builder-v3/preview/body?scale=3&gender=1&style=5&rotation=7&beard=1630&brow=1541&cheek_details=1354&ear=1425&eye=1622&eyelash=2279&eye_details=-1&face_lines=1366&glasses=2441&hair=1719&hat=2555&jaw=1392&mouth=2337&nose=1460&beard_tone=8935738&blush_tone=16299718&brow_tone=13816322&eyeshadow_tone=14725305&hair_tone=4788241&hair_treatment_tone=666890&lipstick_tone=8929692&pupil_tone=11188685&skin_tone=6240025&body=1&face_proportion=4&eye_spacing=1&eye_size=0&outfit=978521"/>
