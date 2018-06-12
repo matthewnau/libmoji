@@ -16,8 +16,11 @@ const styles = [["bitstrips",1],["bitmoji",4],["cm",5]];
 // holds the part of the preview avatar url that is the same for all combinations
 const basePreviewUrl = "https://preview.bitmoji.com/avatar-builder-v3/preview/";
 
-// holds the part of the template avatar url that is the same for all comics
-const baseTemplateUrl = "https://render.bitstrips.com/v2/cpanel/";
+// holds the part of the cpanel avatar url that is the same for all comics
+const baseCpanelUrl = "https://render.bitstrips.com/v2/cpanel/";
+
+// holds the part of the render avatar url that is the same for all comics
+const baseRenderUrl = "https://render.bitstrips.com/render/";
 
 // returns an object with a list of all possible traits for a gender and style
 const getTraits = (gender, style) => assets["traits"][gender][style]["categories"];
@@ -74,8 +77,13 @@ function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) 
 }
 
 // returns the image url of a bitmoji comic with the specified paramters
-function buildComicUrl (comicId, avatarId, transparent, scale) {
-  return `${baseTemplateUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&palette=1&scale=${scale}`
+function buildCpanelUrl (comicId, avatarId, transparent, scale) {
+  return `${baseTemplateUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&scale=${scale}`;
+}
+
+// returns the image url of a bitmoji comic with the specified paramters
+function buildRenderUrl (comicId, avatarId, transparent, scale, outfit) {
+  return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}&outfit=${outfit}`;
 }
 
 // export all functions to be used
@@ -85,7 +93,8 @@ module.exports = {
   poses: poses,
   styles: styles,
   basePreviewUrl: basePreviewUrl,
-  baseTemplateUrl: baseTemplateUrl,
+  baseCpanelUrl: baseCpanelUrl,
+  baseRenderUrl: baseRenderUrl,
   getTraits: getTraits,
   getBrands: getBrands,
   getOutfits: getOutfits,
@@ -102,5 +111,6 @@ module.exports = {
   mapTraits: mapTraits,
   randTemplate: randTemplate,
   buildPreviewUrl: buildPreviewUrl,
-  buildComicUrl:  buildComicUrl,
+  buildCpanelUrl:  buildCpanelUrl,
+  buildRenderUrl, buildRenderUrl,
 };
