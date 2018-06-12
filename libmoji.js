@@ -1,8 +1,8 @@
 // holds all possible traits and outfits
-const assets = require("./assets.json");
+const assets = require("./json/assets.json");
 
 // holds all possible comic templates
-const templates = require("./templates.json")['imoji'];
+const templates = require("./json/templates.json")['imoji'];
 
 // holds all possible genders and their values
 const genders = [["male",1],["female",2]];
