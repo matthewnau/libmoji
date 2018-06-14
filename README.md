@@ -1,7 +1,7 @@
 # Libmoji
-This is a tiny library for making fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes the Bitmoji avatar-building API to render previews of avatars with specified traits. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets). Comics are pulled from the [templates database](https://api.bitmoji.com/content/templates).
+This is a tiny library for easily using the Bitmoji API to make fun, and unique [Bitmoji](https://www.bitmoji.com/) avatars! This library utilizes Bitmoji's services to create new avatars, and to give existing account holders more image customization. Libmoji provides functions that allow you to build the image URL for an avatar with random or specific characteristics pulled from the Bitmoji [asset database](https://api.bitmoji.com/avatar-builder-v3/assets). It also allows you to render your personal Bitmoji in ways that aren't normally possible! Comics are pulled from the [templates database](https://api.bitmoji.com/content/templates).
 
-Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji works without the use of access tokens when generating avatars, and therefore can only render character previews by default. In order to create comic strips, you will need to have a Bitmoji or Snapchat account, and have the [chrome extension](https://chrome.google.com/webstore/detail/bitmoji/bfgdeiadkckfbkeigkoncpdieiiefpig).
+Libmoji makes it easy for you to integrate Bitmoji avatars into your project without the need for having a Bitmoji or Snapchat account. Libmoji works without the use of access tokens when generating avatars, and therefore can only render character previews by default. In order to create comic strips, you will need to have a Bitmoji or Snapchat account, and have the [chrome extension](https://chrome.google.com/webstore/detail/bitmoji/bfgdeiadkckfbkeigkoncpdieiiefpig). While making an account is not necessary for all of Libmoji, it is recommended so that you can have fun exploring all possibilities!
 
 Many different types of Bitmoji styles can be created. Libmoji allows you to make `Bitmoji Deluxe`, `Bitmoji Classic`, and `Bitstrips` avatar styles. Each style can be rendered in either gender with tons of different traits and outfits! There are an infinte amount of possibilities! See the article [Bitmoji Styles](https://github.com/matthewnau/libmoji/wiki/Bitmoji-Styles) for examples of what each style looks like.
 
@@ -29,11 +29,6 @@ const libmoji = require('./libmoji.js');
 $ npm install libmoji
 ```
 Regardless of your installation choice, you should now have access to all functions and variables from the library. Libmoji does not use too many variables or functions, but it is important to make sure that you do not use any of the same names in your project or it could cause errors. Refer to the [documentation](https://github.com/matthewnau/libmoji/wiki/Libmoji-Docs) for how to use Libmoji.
-
-
-<p align="center">
-<img height="400px" src="https://render.bitstrips.com/v2/cpanel/eb1a2ea1-7c1f-4a92-abdb-e89cdc52edfd-be541d0a-5344-47a3-94ac-5e3912651ea5-v1.png?transparent=1&palette=1&scale=2"/>
-</p>
 
 ---
 
