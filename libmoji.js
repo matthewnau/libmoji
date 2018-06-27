@@ -78,7 +78,7 @@ function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) 
 
 // returns the image url of a bitmoji comic with the specified paramters
 function buildCpanelUrl (comicId, avatarId, transparent, scale) {
-  return `${baseTemplateUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&scale=${scale}`;
+  return `${baseCpanelUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&scale=${scale}`;
 }
 
 // returns the image url of a bitmoji comic with the specified paramters
