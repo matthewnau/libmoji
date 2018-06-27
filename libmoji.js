@@ -83,7 +83,7 @@ function buildCpanelUrl (comicId, avatarId, transparent, scale) {
 
 // returns the image url of a bitmoji comic with the specified paramters
 function buildRenderUrl (comicId, avatarId, transparent, scale, outfit) {
-  return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}&outfit=${outfit}`;
+  return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}${outfit ? `&outfit=${outfit}` : ''}`;
 }
 
 // export all functions to be used
