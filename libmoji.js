@@ -78,12 +78,12 @@ function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) 
 
 // returns the image url of a bitmoji comic with the specified paramters
 function buildCpanelUrl (comicId, avatarId, transparent, scale) {
-  return `${baseTemplateUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&scale=${scale}`;
+  return `${baseCpanelUrl}${comicId}-${avatarId}-v3.png?transparent=${transparent}&scale=${scale}`;
 }
 
 // returns the image url of a bitmoji comic with the specified paramters
 function buildRenderUrl (comicId, avatarId, transparent, scale, outfit) {
-  return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}&outfit=${outfit}`;
+  return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}${outfit ? `&outfit=${outfit}` : ''}`;
 }
 
 // export all functions to be used
