@@ -7,7 +7,7 @@ const apiData = require("./json/templates.json");
 // regular bitmoji template data
 const templates = apiData["imoji"]; // consider renaming too 'imoji' for passthrough consistency
 
-// friend bitmoji (friendmoji) tempalte data
+// friend bitmoji (friendmoji) template data
 const friends = apiData["friends"];
 
 // holds all possible genders and their values
@@ -92,7 +92,7 @@ function buildRenderUrl (comicId, avatarId, transparent, scale, outfit) {
   return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}${outfit ? `&outfit=${outfit}` : ''}`;
 }
 
-// returns the image url of a bitmoji comic with the specified paramters
+// returns the image url of a friendmoji comic with the specified paramters
 function buildFriendmojiUrl (comicId, avatarId1, avatarId2, transparent, scale) {
   return `${baseCpanelUrl}${comicId}-${avatarId1}-${avatarId2}-v3.png?transparent=${transparent}&scale=${scale}`;
 }
