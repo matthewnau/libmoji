@@ -1,8 +1,14 @@
 // holds all possible traits and outfits
 const assets = require("./json/assets.json");
 
-// holds all possible comic templates
-const templates = require("./json/templates.json")['imoji'];
+// Holds all bitmoji template data
+const apiData = require("./json/templates.json");
+
+// regular bitmoji template data
+const templates = apiData["imoji"]; // consider renaming too 'imoji' for passthrough consistency
+
+// friend bitmoji (friendmoji) tempalte data
+const friends = apiData["friends"];
 
 // holds all possible genders and their values
 const genders = [["male",1],["female",2]];
@@ -71,7 +77,7 @@ const randTemplate = (templates) => templates[randInt(templates.length)];
 function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
   // use string templating to build the url
-  let url = `${basePreviewUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}` 
+  let url = `${basePreviewUrl}${pose}?scale=${scale}&gender=${gender}&style=${style}`
   url += `&rotation=${rotation}${mapTraits(traits).join("")}&outfit=${outfit}`
   return url;
 }
@@ -86,9 +92,14 @@ function buildRenderUrl (comicId, avatarId, transparent, scale, outfit) {
   return `${baseRenderUrl}${comicId}/${avatarId}-v3.png?transparent=${transparent}&scale=${scale}${outfit ? `&outfit=${outfit}` : ''}`;
 }
 
+// returns the image url of a bitmoji comic with the specified paramters
+function buildFriendmojiUrl (comicId, avatarId1, avatarId2, transparent, scale) {
+  return `${baseCpanelUrl}${comicId}-${avatarId1}-${avatarId2}-v3.png?transparent=${transparent}&scale=${scale}`;
+}
 // export all functions to be used
 module.exports = {
   templates: templates,
+  friends: friends,
   genders: genders,
   poses: poses,
   styles: styles,
@@ -113,4 +124,5 @@ module.exports = {
   buildPreviewUrl: buildPreviewUrl,
   buildCpanelUrl:  buildCpanelUrl,
   buildRenderUrl, buildRenderUrl,
+  buildFriendmojiUrl: buildFriendmojiUrl
 };

@@ -1,12 +1,20 @@
 "use strict";
 
+var _module$exports;
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // holds all possible traits and outfits
 var assets = require("./json/assets.json");
 
-// holds all possible comic templates
-var templates = require("./json/templates.json")['imoji'];
+// Holds all bitmoji template data
+var apiData = require("./json/templates.json");
+
+// regular bitmoji template data
+var templates = apiData["imoji"]; // consider renaming too 'imoji' for passthrough consistency
+
+// friend bitmoji (friendmoji) tempalte data
+var friends = apiData["friends"];
 
 // holds all possible genders and their values
 var genders = [["male", 1], ["female", 2]];
@@ -124,9 +132,14 @@ function buildRenderUrl(comicId, avatarId, transparent, scale, outfit) {
   return "" + baseRenderUrl + comicId + "/" + avatarId + "-v3.png?transparent=" + transparent + "&scale=" + scale + (outfit ? "&outfit=" + outfit : '');
 }
 
+// returns the image url of a bitmoji comic with the specified paramters
+function buildFriendmojiUrl(comicId, avatarId1, avatarId2, transparent, scale) {
+  return "" + baseCpanelUrl + comicId + "-" + avatarId1 + "-" + avatarId2 + "-v3.png?transparent=" + transparent + "&scale=" + scale;
+}
 // export all functions to be used
-module.exports = _defineProperty({
+module.exports = (_module$exports = {
   templates: templates,
+  friends: friends,
   genders: genders,
   poses: poses,
   styles: styles,
@@ -150,4 +163,4 @@ module.exports = _defineProperty({
   randTemplate: randTemplate,
   buildPreviewUrl: buildPreviewUrl,
   buildCpanelUrl: buildCpanelUrl,
-  buildRenderUrl: buildRenderUrl }, "buildRenderUrl", buildRenderUrl);
+  buildRenderUrl: buildRenderUrl }, _defineProperty(_module$exports, "buildRenderUrl", buildRenderUrl), _defineProperty(_module$exports, "buildFriendmojiUrl", buildFriendmojiUrl), _module$exports);
