@@ -73,7 +73,7 @@ const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 // return a random comic object
 const randTemplate = (templates) => templates[randInt(templates.length)];
 
-// return brand data filtered by specific fields and values
+// return brand data, filtering out specific fields and values
 const filterBrands = (brands, filters) => {
 
   return brands.map((brand) => {
