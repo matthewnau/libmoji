@@ -113,8 +113,12 @@ var randTemplate = function randTemplate(templates) {
   return templates[randInt(templates.length)];
 };
 
-// return brand data filtered by specific fields and values
+// return brand data:
+// filter out specific fields and values when returnFilteredFields = false
+// return only specific fields and values when returnFilteredFields = true
 var filterBrands = function filterBrands(brands, filters) {
+  var returnFilteredFields = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
 
   return brands.map(function (brand) {
     var brandFilter = filters[brand.name];
@@ -126,12 +130,14 @@ var filterBrands = function filterBrands(brands, filters) {
       return Object.assign({}, brand, {
         outfits: brand.outfits.filter(function (outfit) {
           var filterKey = void 0,
-              i = void 0;
+              i = void 0,
+              theFilter = void 0;
 
           for (i = 0; i < filterKeys.length; i++) {
             // iterate over filter keys; filter data
             filterKey = filterKeys[i];
-            return !brandFilter[filterKey].includes(outfit[filterKey]);
+            theFilter = brandFilter[filterKey].includes(outfit[filterKey]);
+            return returnFilteredFields ? theFilter : !theFilter;
           }
         })
       });

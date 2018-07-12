@@ -73,8 +73,10 @@ const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 // return a random comic object
 const randTemplate = (templates) => templates[randInt(templates.length)];
 
-// return brand data, filtering out specific fields and values
-const filterBrands = (brands, filters) => {
+// return brand data:
+// filter out specific fields and values when returnFilteredFields = false
+// return only specific fields and values when returnFilteredFields = true
+const filterBrands = (brands, filters, returnFilteredFields = false) => {
 
   return brands.map((brand) => {
     const brandFilter = filters[brand.name];
@@ -85,11 +87,12 @@ const filterBrands = (brands, filters) => {
       return {
         ...brand,
         outfits: brand.outfits.filter((outfit) => {
-          let filterKey, i;
+          let filterKey, i, theFilter;
 
           for (i = 0; i < filterKeys.length; i++) { // iterate over filter keys; filter data
             filterKey = filterKeys[i];
-            return !brandFilter[filterKey].includes(outfit[filterKey]);
+            theFilter = brandFilter[filterKey].includes(outfit[filterKey]);
+            return returnFilteredFields ? theFilter : !theFilter;
           }
         })
       };
