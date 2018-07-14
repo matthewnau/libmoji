@@ -131,14 +131,18 @@ var filterBrands = function filterBrands(brands, filters) {
         outfits: brand.outfits.filter(function (outfit) {
           var filterKey = void 0,
               i = void 0,
-              theFilter = void 0;
+              filterItem = void 0;
 
           for (i = 0; i < filterKeys.length; i++) {
             // iterate over filter keys; filter data
             filterKey = filterKeys[i];
-            theFilter = brandFilter[filterKey].includes(outfit[filterKey]);
-            return returnFilteredFields ? theFilter : !theFilter;
+            filterItem = brandFilter[filterKey].includes(outfit[filterKey]);
+            if (filterItem) {
+              return returnFilteredFields ? filterItem : !filterItem;
+            }
           }
+
+          return !returnFilteredFields;
         })
       });
     }

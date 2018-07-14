@@ -87,13 +87,17 @@ const filterBrands = (brands, filters, returnFilteredFields = false) => {
       return {
         ...brand,
         outfits: brand.outfits.filter((outfit) => {
-          let filterKey, i, theFilter;
+          let filterKey, i, filterItem;
 
           for (i = 0; i < filterKeys.length; i++) { // iterate over filter keys; filter data
             filterKey = filterKeys[i];
-            theFilter = brandFilter[filterKey].includes(outfit[filterKey]);
-            return returnFilteredFields ? theFilter : !theFilter;
+            filterItem = brandFilter[filterKey].includes(outfit[filterKey]);
+            if (filterItem) {
+              return returnFilteredFields ? filterItem : !filterItem;
+            }
           }
+
+          return !returnFilteredFields;
         })
       };
     }
