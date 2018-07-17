@@ -73,6 +73,39 @@ const mapTraits = (traits) => traits.map(trait => `&${trait[0]}=${trait[1]}`);
 // return a random comic object
 const randTemplate = (templates) => templates[randInt(templates.length)];
 
+// return brand data:
+// filter out specific fields and values when returnFilteredFields = false
+// return only specific fields and values when returnFilteredFields = true
+const filterBrands = (brands, filters, returnFilteredFields = false) => {
+
+  return brands.map((brand) => {
+    const brandFilter = filters[brand.name];
+
+    if (brandFilter !== undefined) { // filter configuration exists for this brand
+      const filterKeys = Object.keys(brandFilter);
+
+      return {
+        ...brand,
+        outfits: brand.outfits.filter((outfit) => {
+          let filterKey, i, filterItem;
+
+          for (i = 0; i < filterKeys.length; i++) { // iterate over filter keys; filter data
+            filterKey = filterKeys[i];
+            filterItem = brandFilter[filterKey].includes(outfit[filterKey]);
+            if (filterItem) {
+              return returnFilteredFields ? filterItem : !filterItem;
+            }
+          }
+
+          return !returnFilteredFields;
+        })
+      };
+    }
+
+    return brand;
+  });
+}
+
 // returns the image url of a bitmoji avatar with the specified parameters
 function buildPreviewUrl (pose, scale, gender, style, rotation, traits, outfit) {
 
@@ -108,6 +141,7 @@ module.exports = {
   baseRenderUrl: baseRenderUrl,
   getTraits: getTraits,
   getBrands: getBrands,
+  filterBrands: filterBrands,
   getOutfits: getOutfits,
   getValues: getValues,
   getKey: getKey,

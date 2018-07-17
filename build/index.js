@@ -13,7 +13,7 @@ var apiData = require("./json/templates.json");
 // regular bitmoji template data
 var templates = apiData["imoji"]; // consider renaming too 'imoji' for passthrough consistency
 
-// friend bitmoji (friendmoji) tempalte data
+// friend bitmoji (friendmoji) template data
 var friends = apiData["friends"];
 
 // holds all possible genders and their values
@@ -113,6 +113,44 @@ var randTemplate = function randTemplate(templates) {
   return templates[randInt(templates.length)];
 };
 
+// return brand data:
+// filter out specific fields and values when returnFilteredFields = false
+// return only specific fields and values when returnFilteredFields = true
+var filterBrands = function filterBrands(brands, filters) {
+  var returnFilteredFields = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+
+  return brands.map(function (brand) {
+    var brandFilter = filters[brand.name];
+
+    if (brandFilter !== undefined) {
+      // filter configuration exists for this brand
+      var filterKeys = Object.keys(brandFilter);
+
+      return Object.assign({}, brand, {
+        outfits: brand.outfits.filter(function (outfit) {
+          var filterKey = void 0,
+              i = void 0,
+              filterItem = void 0;
+
+          for (i = 0; i < filterKeys.length; i++) {
+            // iterate over filter keys; filter data
+            filterKey = filterKeys[i];
+            filterItem = brandFilter[filterKey].includes(outfit[filterKey]);
+            if (filterItem) {
+              return returnFilteredFields ? filterItem : !filterItem;
+            }
+          }
+
+          return !returnFilteredFields;
+        })
+      });
+    }
+
+    return brand;
+  });
+};
+
 // returns the image url of a bitmoji avatar with the specified parameters
 function buildPreviewUrl(pose, scale, gender, style, rotation, traits, outfit) {
 
@@ -132,7 +170,7 @@ function buildRenderUrl(comicId, avatarId, transparent, scale, outfit) {
   return "" + baseRenderUrl + comicId + "/" + avatarId + "-v3.png?transparent=" + transparent + "&scale=" + scale + (outfit ? "&outfit=" + outfit : '');
 }
 
-// returns the image url of a bitmoji comic with the specified paramters
+// returns the image url of a friendmoji comic with the specified paramters
 function buildFriendmojiUrl(comicId, avatarId1, avatarId2, transparent, scale) {
   return "" + baseCpanelUrl + comicId + "-" + avatarId1 + "-" + avatarId2 + "-v3.png?transparent=" + transparent + "&scale=" + scale;
 }
@@ -148,6 +186,7 @@ module.exports = (_module$exports = {
   baseRenderUrl: baseRenderUrl,
   getTraits: getTraits,
   getBrands: getBrands,
+  filterBrands: filterBrands,
   getOutfits: getOutfits,
   getValues: getValues,
   getKey: getKey,
